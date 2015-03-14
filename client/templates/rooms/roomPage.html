@@ -1,29 +1,30 @@
 <template name="roomPage">
-  {{> paper_button_link}}
-  <style>
-  h3 {
-    display: inline-block; line-height: 40px; margin-top:0;margin-bottom:0;
-  }
-  </style>
-  <div class="container-fluid">
-
+  
+  <div>
     <h1>{{name}}</h1>
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col s3">
         <h3>Comments</h3>
-        {{> commentList }}
+        <ul>
+          {{#each comment}}
+            <li>
+              <div class="card small">
+                <div class="card-content">
+                  <span class="card-title">{{author}}</span>
+                  <p>{{content}}</p>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
       </div>
-      <div class="col-lg-6">
-        <div class="row">
+      <div class="col s6">
           {{> videoPlayer }}
-        </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col s3">
         <div><h3 style="">Video Queue</h3><paper-button raised class="btn-default pull-right"><a style="text-decoration: none; color: black;" href="{{pathFor 'addVideo' }}"><i class="glyphicon glyphicon-plus"></i></a></paper-button></div>
         {{> videoQueue }}
       </div>
     </div>
-    <div class="row">
-      </div>
   </div>
 </template>

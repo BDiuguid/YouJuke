@@ -1,18 +1,21 @@
 <template name="commentList">
-  {{> paper_button_link}}
-
-  <ul class="list-group">
-    {{#each comment}}
-      <li class="list-group-item">
-        <span class="help-block">{{author}}</span> <span>{{content}}</span>
+  <ul>
+    {{#each ../comment}}
+      <li>
+        <div class="card small">
+          <div class="card-content">
+            <span class="card-title">{{author}}</span>
+            <p>{{content}}</p>
+          </div>
+        </div>
       </li>
     {{/each}}
   </ul>
 
-  <paper-button raised type="button" id="aliasSubmit" class="btn-default">Set Alias</paper-button>
-  <input type="text" class="form-control" id="aliasText" placeholder="Alias name..." />
+  <button type="button" id="aliasSubmit" class="waves-effect waves-light btn">Set Alias</button>
+  <input type="text" id="aliasText" placeholder="Alias name..." />
   {{#if alias}}
-    <textarea class="form-control" id="commentText"></textarea>
-    <paper-button raised type="button" id="sendComment" class="btn-default">Send</paper-button>
+    <input class="" id="commentText" />
+    <button type="button" id="sendComment" class="waves-effect waves-light btn">Send</button>
   {{/if}}
 </template>

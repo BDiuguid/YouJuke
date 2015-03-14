@@ -1,12 +1,28 @@
 <template name="videoPlayer">
-  {{> paper_button_link }}
-  {{> paper_fab_link }}
 
-  <div class="row">
-    <paper-fab id="play" style="background-color: green;" src="/media-play.png"></paper-fab>
+  <style>
+    #toolbar {
+      background-color:white;
+    }
+    #toolbar .nav-wrapper {
+      position: relative;
+      height: 100%;
+    }
+    #toolbar li {
+      margin-right: 10px;
+      float: left;
+      padding: 0px;
+    }
+    
+  </style>
+  <div id="toolbar">
+    <div class="nav-wrapper">
+      <ul class="left">
+        <li><a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-av-play-arrow"></i></a></li>
+        <li><a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-av-playlist-add"></i></a></li>
+      </ul>
+    </div>
   </div>
-  <div class="row">
-    <div id="player"></div>
-  </div>
+  <div id="player"></div>
 
 </template>
