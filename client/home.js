@@ -8,4 +8,12 @@ Template.home.events(
 			Router.go('roomPage', {name:roomName});
 		}
 	}
-)
+);
+
+Template.home.helpers({
+	createButtonAttrs: function() {
+		return {
+			raised: true
+		}
+	}
+});

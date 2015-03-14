@@ -1,4 +1,6 @@
 <template name="commentList">
+  {{> paper_button_link}}
+
   <ul class="list-group">
     {{#each comment}}
       <li class="list-group-item">
@@ -7,10 +9,10 @@
     {{/each}}
   </ul>
 
-  <button type="button" id="aliasSubmit" class="btn btn-default">Set Alias</button>
+  <paper-button raised type="button" id="aliasSubmit" class="btn-default">Set Alias</paper-button>
   <input type="text" class="form-control" id="aliasText" placeholder="Alias name..." />
   {{#if alias}}
     <textarea class="form-control" id="commentText"></textarea>
-    <button type="button" id="sendComment" class="btn btn-default">Send</button>
+    <paper-button raised type="button" id="sendComment" class="btn-default">Send</paper-button>
   {{/if}}
 </template>

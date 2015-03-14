@@ -1,10 +1,11 @@
 <template name="home">
+  {{> paper_button_link}}
+  {{> paper_input_link }}
 
-  
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<paper-button class="btn-primary" data-toggle="modal" data-target="#myModal">
   Create Room
-</button>
+</paper-button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -15,13 +16,14 @@
         <h4 class="modal-title" id="myModalLabel">Create Awesomeness</h4>
       </div>
       <div class="modal-body">
-        <input 
-        	type="text" class="form-control" id="room_name"
-        />
+        <paper-input-decorator label="required" floatingLabel error="input is required!" autoValidate>
+          <input is="core-input" id="room_name" required>
+        </paper-input-decorator>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" id="submit_creation">Create</button>
+        <paper-button data-dismiss="modal">Cancel</paper-button>
+
+        <paper-button class="btn-danger" id="submit_creation" raised>Submit</paper-button>
       </div>
     </div>
   </div>
