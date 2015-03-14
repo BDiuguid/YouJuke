@@ -31,7 +31,7 @@ function playVideo (data) {
   function onPlayerStateChange(event) {
 
     if(event.data === 0) {
-      var room = Rooms.find({_id: data._id});
+      var room = Rooms.findOne({_id: data._id});
       shiftQueue(room);
       player.loadVideoById(room.queueItem[0].videoId);
       item = room.queueItem[0];
@@ -39,7 +39,7 @@ function playVideo (data) {
   }
 
   function shiftQueue(room) {
-    if (item === room.queueItem[0]) {
+    if (item.videoId === room.queueItem[0].videoId) {
       room.queueItem.shift();
       Rooms.update(data._id, room);
     }
