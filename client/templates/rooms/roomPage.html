@@ -1,13 +1,22 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-1">
-      {{> commentList }}
+<template name="roomPage">
+  <div class="container-fluid">
+
+    <h1>{{name}}</h1>
+    <div class="row">
+      <div class="col-lg-3">
+        <h3>Comments:</h3>
+        {{> commentList }}
+      </div>
+      <div class="col-lg-6">
+        <!--{{> videoPlayer }}-->
+      </div>
+      <div class="col-lg-3">
+        <h3>Video Queue:</h3>
+        {{> videoQueue }}
+      </div>
     </div>
-    <div class="col-lg-10">
-      {{> videoPlayer }}
-    </div>
-    <div class="col-lg-1">
-      {{> videoQueue }}
+    <div class="row">
+      <a href="{{pathFor 'addVideo' }}" class="btn btn-default">Add Video!</a>
     </div>
   </div>
-</div>
+</template>
