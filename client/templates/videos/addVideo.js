@@ -17,13 +17,23 @@ Template.addVideo.events({
                Session.set("searchResults", result.data.items);
              }
            });
-    // Meteor.HTTP.get() goes here...
 
     // Clear form
     event.target.text.value = "";
 
     // Prevent default form submit
     return false;
+  },
+  "click .addVideoClick": function(event, Template) {
+    var formattedVideo = {
+      videoTitle: this.snippet.title,
+      videoId: this.id.videoId
+    };
+    Template.data.queueItem.push(formattedVideo);
+
+    Rooms.update(Template.data._id, Template.data);
+
+    Router.go('roomPage', Template.data);
   }
 });
 
