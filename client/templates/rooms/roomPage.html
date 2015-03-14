@@ -14,8 +14,12 @@
         {{> commentList }}
       </div>
       <div class="col-lg-6">
-        <h3>Player:</h3>
-        {{> videoPlayer }}
+        <div class="row">
+
+        </div>
+        <div class="row">
+          {{> videoPlayer }}
+        </div>
       </div>
       <div class="col-lg-3">
         <div><h3 style="">Video Queue</h3><paper-button raised class="btn-default pull-right"><a style="text-decoration: none; color: black;" href="{{pathFor 'addVideo' }}"><i class="glyphicon glyphicon-plus"></i></a></paper-button></div>
