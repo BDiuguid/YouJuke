@@ -9,4 +9,5 @@ insecure
 iron:router
 twbs:bootstrap
 sacha:spin
-renaldo:youtube-api
+http
+adrianliaw:youtube-iframe-api
