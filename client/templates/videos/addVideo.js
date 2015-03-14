@@ -7,7 +7,7 @@ Template.addVideo.events({
     //var key = "AIzaSyA8fMBylBvF3qDHx_JtHT5GJn3UckC2aPs"; //server
 
     HTTP.call("GET",
-           "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + text + "&type=video&key=" + key,
+           "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + text + "&type=video&key=" + key,
            function (error, result) {
              if(error) {
               console.log('ERROR from YouTube:');
@@ -29,7 +29,7 @@ Template.addVideo.events({
       videoTitle: this.snippet.title,
       videoId: this.id.videoId
     };
-    
+
     if (!Template.data.queueItem)
       Template.data.queueItem = [];
     Template.data.queueItem.push(formattedVideo);
