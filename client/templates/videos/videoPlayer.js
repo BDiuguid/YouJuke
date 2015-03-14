@@ -10,8 +10,8 @@ function playVideo (data) {
   onYouTubeIframeAPIReady = function () {
     item = data.queueItem[0];
       player = new YT.Player('player', {
-        height: '390',
-        width: '640',
+        height: '300',
+        width: '100%',
         videoId: data.queueItem[0].videoId,
         events: {
           'onReady': onPlayerReady,

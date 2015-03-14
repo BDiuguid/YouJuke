@@ -1,21 +1,16 @@
 <template name="commentList">
-  <ul>
-    {{#each ../comment}}
-      <li>
-        <div class="card small">
-          <div class="card-content">
-            <span class="card-title">{{author}}</span>
-            <p>{{content}}</p>
-          </div>
-        </div>
-      </li>
+
+
+  <ul class="collection">
+    {{#each comment}}
+      <li class="collection-item"><span style="font-weight:bold;">{{author}}</span><br/><span>{{content}}</span></li>
     {{/each}}
   </ul>
 
   <button type="button" id="aliasSubmit" class="waves-effect waves-light btn">Set Alias</button>
   <input type="text" id="aliasText" placeholder="Alias name..." />
   {{#if alias}}
-    <input class="" id="commentText" />
+    <input type="text" id="commentText" />
     <button type="button" id="sendComment" class="waves-effect waves-light btn">Send</button>
   {{/if}}
 </template>
