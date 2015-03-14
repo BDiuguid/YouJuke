@@ -1,6 +1,12 @@
 <template name="videoPlayer">
-<!--   {{#with queueItem}} -->
-    <button class="play">Play</button>
+  {{> paper_button_link }}
+  {{> paper_fab_link }}
+
+  <div class="row">
+    <paper-fab id="play" style="background-color: green;" src="/media-play.png"></paper-fab>
+  </div>
+  <div class="row">
     <div id="player"></div>
-<!--   {{/with}} -->
+  </div>
+
 </template>

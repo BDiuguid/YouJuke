@@ -1,5 +1,5 @@
 Template.videoPlayer.events({
-  "click .play": function (event) {
+  "click #play": function (event) {
     playVideo(this);
   }
 });
@@ -19,8 +19,8 @@ function playVideo (data) {
         }
       });
   };
-  
-  YT.load();  
+
+  YT.load();
 
   // autoplay video
   function onPlayerReady(event) {
@@ -28,15 +28,15 @@ function playVideo (data) {
   }
 
   // when video ends
-  function onPlayerStateChange(event) {        
-   
-    if(event.data === 0) {    
+  function onPlayerStateChange(event) {
+
+    if(event.data === 0) {
       shiftQueue();
-      player.loadVideoById(data.queueItem[0].videoId); 
+      player.loadVideoById(data.queueItem[0].videoId);
       item = data.queueItem[0];
     }
   }
-  
+
   function shiftQueue() {
     if (item === data.queueItem[0]) {
       data.queueItem.shift();
