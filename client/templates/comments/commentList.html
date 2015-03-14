@@ -6,4 +6,11 @@
       </li>
     {{/each}}
   </ul>
+
+  <button type="button" id="aliasSubmit" class="btn btn-default">Set Alias</button>
+  <input type="text" class="form-control" id="aliasText" placeholder="Alias name..." />
+  {{#if alias}}
+    <textarea class="form-control" id="commentText"></textarea>
+    <button type="button" id="sendComment" class="btn btn-default">Send</button>
+  {{/if}}
 </template>
