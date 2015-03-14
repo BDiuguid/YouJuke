@@ -31,16 +31,17 @@ function playVideo (data) {
   function onPlayerStateChange(event) {
 
     if(event.data === 0) {
-      shiftQueue();
-      player.loadVideoById(data.queueItem[0].videoId);
-      item = data.queueItem[0];
+      var room = Rooms.find({_id: data._id});
+      shiftQueue(room);
+      player.loadVideoById(room.queueItem[0].videoId);
+      item = room.queueItem[0];
     }
   }
 
-  function shiftQueue() {
-    if (item === data.queueItem[0]) {
-      data.queueItem.shift();
-      Rooms.update(data._id, data);
+  function shiftQueue(room) {
+    if (item === room.queueItem[0]) {
+      room.queueItem.shift();
+      Rooms.update(data._id, room);
     }
   }
 }
