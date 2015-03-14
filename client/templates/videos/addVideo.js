@@ -29,6 +29,9 @@ Template.addVideo.events({
       videoTitle: this.snippet.title,
       videoId: this.id.videoId
     };
+    
+    if (!Template.data.queueItem)
+      Template.data.queueItem = [];
     Template.data.queueItem.push(formattedVideo);
 
     Rooms.update(Template.data._id, Template.data);
