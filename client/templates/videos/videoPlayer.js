@@ -5,8 +5,10 @@ Template.videoPlayer.events({
 });
 
 function playVideo (data) {
+  var item;
   var player;
   onYouTubeIframeAPIReady = function () {
+    item = data.queueItem[0];
       player = new YT.Player('player', {
         height: '390',
         width: '640',
@@ -31,11 +33,14 @@ function playVideo (data) {
     if(event.data === 0) {    
       shiftQueue();
       player.loadVideoById(data.queueItem[0].videoId); 
+      item = data.queueItem[0];
     }
   }
   
   function shiftQueue() {
-    data.queueItem.shift();
-    Rooms.update(data._id, data);
+    if (item === data.queueItem[0]) {
+      data.queueItem.shift();
+      Rooms.update(data._id, data);
+    }
   }
 }
