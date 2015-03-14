@@ -1,5 +1,22 @@
 <template name="addVideo">
-  <form>
-    <input class="form-control" name="searchText" type="text" placeholder="Search YouTube">
+  <form class="search-youtube">
+    <input class="form-control" name="text" type="text" placeholder="Search YouTube">
   </form>
+<!-- id.videoId
+
+publishedAt
+channelId
+title
+description
+
+thumbnails.url
+thumbnails.height
+thumbnails.width -->
+
+
+  {{#each results}}
+    <p> {{title}} </p>
+  {{/each}}
+
+
 </template>
