@@ -1,6 +1,13 @@
 <template name="notFound">
-  <div class="not-found page jumbotron">
-    <h2>404</h2>
-    <p>Sorry, we couldn't find a page at this address.</p>
+  <div class="large">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">404 Error</span>
+        <p>Sorry, we couldn't find a page at this address...</p>
+      </div>
+      <div class="card-action">
+        <a href="{{pathFor 'home'}}">Return Home!</a>
+      </div>
+    </div>
   </div>
 </template>

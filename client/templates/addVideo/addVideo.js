@@ -3,8 +3,7 @@ Template.addVideo.events({
     // This function is called when the new task form is submitted
 
     var text = event.target.text.value;
-    var key = "AIzaSyBVOg3HnF5rPSjeIqqRln0RisfY06p_JqQ"; // any
-    //var key = "AIzaSyA8fMBylBvF3qDHx_JtHT5GJn3UckC2aPs"; //server
+    var key = "AIzaSyBVOg3HnF5rPSjeIqqRln0RisfY06p_JqQ";
 
     HTTP.call("GET",
            "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + text + "&type=video&key=" + key,
@@ -36,7 +35,7 @@ Template.addVideo.events({
 
     Rooms.update(Template.data._id, Template.data);
 
-    Router.go('roomPage', Template.data);
+    Router.go('room', Template.data);
   }
 });
 

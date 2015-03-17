@@ -1,4 +1,4 @@
-Template.commentList.events({
+Template.comments.events({
   "click #aliasSubmit": function(event) {
     var name = $('#aliasText').val();
 
@@ -15,7 +15,7 @@ Template.commentList.events({
   }
 });
 
-Template.commentList.helpers({
+Template.comments.helpers({
   alias: function() {
     return Session.get('aliasName');
   }

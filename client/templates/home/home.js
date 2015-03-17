@@ -4,7 +4,7 @@ Template.home.events(
 			var roomName = $('#roomName').val();
 
 			Meteor.call("roomInsert", {name:roomName}, function() {
-				Router.go('roomPage', {name:roomName});
+				Router.go('room', {name:roomName});
 			});
 
 			return false;

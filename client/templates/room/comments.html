@@ -1,0 +1,27 @@
+<template name="comments">
+
+
+  <ul class="collection">
+    {{#each comment}}
+      <li class="collection-item"><span style="font-weight:bold;">{{author}}</span><br/><span>{{content}}</span></li>
+    {{/each}}
+  </ul>
+
+  <div class="input-field">
+    <i class="mdi-communication-contacts prefix"></i>
+    <input id="aliasText" type="text" />
+    <label for="aliasText">Alias Name</label>
+    <button type="button" id="aliasSubmit" class="waves-effect waves-light btn">Set Alias</button>
+  </div>
+
+  {{#if alias}}
+  <div class="input-field">
+    <i class="mdi-communication-comment prefix"></i>
+    <input id="commentText" type="text" />
+    <label for="aliasText">Comment</label>
+    <button type="button" id="sendComment" class="waves-effect waves-light btn">Post Comment</button>
+  </div>
+  {{/if}}
+
+
+</template>

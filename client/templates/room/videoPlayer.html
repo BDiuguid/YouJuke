@@ -1,0 +1,28 @@
+<template name="videoPlayer">
+
+  <style>
+    #toolbar {
+      background-color:white;
+    }
+    #toolbar .nav-wrapper {
+      position: relative;
+      height: 100%;
+    }
+    #toolbar li {
+      margin-right: 10px;
+      float: left;
+      padding: 0px;
+    }
+
+  </style>
+  <div id="toolbar">
+    <div class="nav-wrapper">
+      <ul class="left">
+        <li><a id="play" class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="top" data-delay="50" data-tooltip="Play Videos!"><i class="mdi-av-play-arrow"></i></a></li>
+        <li><a href="{{pathFor 'addVideo' }}" class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="top" data-delay="50" data-tooltip="Search Videos!"><i class="mdi-av-playlist-add"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="player"></div>
+
+</template>

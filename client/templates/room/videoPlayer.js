@@ -45,3 +45,8 @@ function playVideo (data) {
     }
   }
 }
+
+// Tooltip initialization. :)
+Template.videoPlayer.rendered = function() {
+  $(".tooltipped").tooltip();
+};

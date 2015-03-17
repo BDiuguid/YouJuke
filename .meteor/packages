@@ -10,4 +10,4 @@ iron:router
 sacha:spin
 http
 adrianliaw:youtube-iframe-api
-ecwyne:polymer-elements
+materialize:materialize

@@ -1,19 +1,16 @@
-<template name="roomPage">
-
-  <div>
-    <h3>{{name}}</h3>
+<template name="room">
+    <h3 class="center-align">{{name}}</h3>
     <div class="row">
       <div class="col s12 m12 l3">
         <h4>Comments</h4>
-        {{> commentList}}
+        {{> comments}}
       </div>
       <div class="col s12 m12 l6">
-          {{> videoPlayer }}
+          {{> videoPlayer}}
       </div>
       <div class="col s12 m12 l3">
-        <div><h4>Video Queue</h4></div>
-        {{> videoQueue }}
+        <h4>Playlist</h4>
+        {{> playlist }}
       </div>
     </div>
-  </div>
 </template>
